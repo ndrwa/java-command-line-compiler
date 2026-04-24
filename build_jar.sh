@@ -4,9 +4,10 @@
 PROJECT_ROOT=$(pwd)
 SRC_DIR="src"
 LIB_DIR="libs"
+EXTRACTED_DIR="extracted"
 TARGET_DIR="target"
 JAR_NAME="MyCarApp.jar"
-MAIN_CLASS="service.CarService"
+MAIN_CLASS="src.service.CarService"
 JAVA_VERSION="17"
 
 echo "--- Starting Build Process ---"
@@ -15,6 +16,7 @@ echo "--- Starting Build Process ---"
 echo "Cleaning old files..."
 rm -rf $TARGET_DIR
 rm -f $JAR_NAME
+rm -rf $EXTRACTED_DIR
 
 # 3. Create build directory
 mkdir -p $TARGET_DIR
@@ -48,6 +50,9 @@ jar -cfm ../$JAR_NAME manifest.txt .
 # 8. Cleanup Target (Optional)
 cd ..
 # rm -rf $TARGET_DIR # Uncomment if you want to delete target after build
+
+echo "Unzip jar into extracted folder for exploration"
+unzip $JAR_NAME -d $EXTRACTED_DIR
 
 echo "--- Build Complete! ---"
 echo "Run your app with: java -jar $JAR_NAME"

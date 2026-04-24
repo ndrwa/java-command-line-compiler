@@ -1,6 +1,6 @@
-package service;
+package src.service;
 
-import model.Car;
+import src.model.Car;
 import java.util.Set;
 
 import org.apache.commons.lang3.text.WordUtils;
