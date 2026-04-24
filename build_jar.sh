@@ -42,7 +42,7 @@ echo "" >> manifest.txt # The crucial blank line
 
 # 7. Package everything into a Fat JAR
 echo "Packaging into $JAR_NAME..."
-jar -cvfm ../$JAR_NAME manifest.txt .
+jar -cfm ../$JAR_NAME manifest.txt .
 
 # 8. Cleanup Target (Optional)
 cd ..
