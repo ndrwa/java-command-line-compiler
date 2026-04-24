@@ -1,4 +1,2 @@
-for libs: https://repo1.maven.org/maven2/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar
-
-javac -classpath ".:libs/\*" -d target -sourcepath . service/CarService.java model/\*\.java <br />
-java -classpath ".:target:libs/\*" service/CarService
+https://mvnrepository.com/artifact/org.apache.commons/commons-lang3/3.20.0
+https://mvnrepository.com/artifact/com.google.guava/guava/33.6.0-jre
