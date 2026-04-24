@@ -7,6 +7,7 @@ LIB_DIR="libs"
 TARGET_DIR="target"
 JAR_NAME="MyCarApp.jar"
 MAIN_CLASS="service.CarService"
+JAVA_VERSION="17"
 
 echo "--- Starting Build Process ---"
 
@@ -21,7 +22,7 @@ mkdir -p $TARGET_DIR
 # 4. Compile Source Code
 echo "Compiling Java files..."
 # We include the libs in the classpath so javac can find Guava
-javac -d $TARGET_DIR -cp ".:$LIB_DIR/*" $SRC_DIR/model/*.java $SRC_DIR/service/*.java
+javac --release $JAVA_VERSION -d $TARGET_DIR -cp ".:$LIB_DIR/*" $SRC_DIR/model/*.java $SRC_DIR/service/*.java
 
 if [ $? -ne 0 ]; then
     echo "Compilation failed!"
